@@ -7,10 +7,10 @@ import com.example.mydictionary.data.source.local.entities.WordEntity
 interface DashboardViewModel {
 
     val wordLiveData: LiveData<List<WordEntity>>
-//    val cursorWordsLiveData: LiveData<WordEntity>
-//
-//    fun loadWords()
+    val cursorWordsLiveData: LiveData<Cursor>
 
-    fun search(query: String): LiveData<List<WordEntity>>
+    fun loadWords()
+
+    fun search(query: String)
 
 }

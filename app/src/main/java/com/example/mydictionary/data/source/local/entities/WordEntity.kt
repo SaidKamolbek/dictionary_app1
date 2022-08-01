@@ -3,7 +3,7 @@ package com.example.mydictionary.data.source.local.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import javax.annotation.Nullable
+import com.example.mydictionary.data.model.WordModel
 
 @Entity(tableName = "words")
 class WordEntity(
@@ -28,3 +28,5 @@ class WordEntity(
     val synonym: String
 
 )
+
+fun WordEntity.toWordModel(): WordModel = WordModel(id, word, definition, example, antonym, synonym)

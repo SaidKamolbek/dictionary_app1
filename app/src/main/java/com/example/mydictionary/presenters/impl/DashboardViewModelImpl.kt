@@ -16,17 +16,16 @@ class DashboardViewModelImpl @Inject constructor(
 ) : ViewModel(), DashboardViewModel {
     override val wordLiveData: LiveData<List<WordEntity>> = repository.getAllWords()
 
-//    override val cursorWordsLiveData: LiveData<WordEntity> = MutableLiveData()
+    override val cursorWordsLiveData: MutableLiveData<Cursor> = MutableLiveData()
 
-//
-//    override fun loadWords() {
-//        cursorWordsLiveData.value = repository.getWordsCursor()
-//    }
 
-    override fun search(query: String): LiveData<List<WordEntity>> {
+    override fun loadWords() {
+        cursorWordsLiveData.value = repository.getWordsCursor()
+    }
+
+    override fun search(query: String) {
         if (query.trim().isNotEmpty()) {
-            return repository.getCursorBySearch("%$query%")
+            cursorWordsLiveData.value = repository.getCursorBySearch("%$query%")
         }
-        return wordLiveData
     }
 }

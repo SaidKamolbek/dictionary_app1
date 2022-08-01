@@ -16,7 +16,7 @@ class DashboardRepositoryImpl @Inject constructor(
 
     override fun getWordsCursor(): Cursor = wordDao.getAllWordsCursor()
 
-    override fun getCursorBySearch(query: String): LiveData<List<WordEntity>> = wordDao.getCursorByQuery(query)
+    override fun getCursorBySearch(query: String): Cursor = wordDao.getCursorByQuery(query)
 
 
 }

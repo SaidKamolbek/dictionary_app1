@@ -10,5 +10,5 @@ interface DashboardRepository {
 
     fun getWordsCursor(): Cursor
 
-    fun getCursorBySearch(query: String): LiveData<List<WordEntity>>
+    fun getCursorBySearch(query: String): Cursor
 }

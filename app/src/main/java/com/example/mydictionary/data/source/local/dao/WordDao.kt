@@ -18,5 +18,5 @@ interface WordDao : BaseDao<WordEntity> {
 
 
     @Query("SELECT * FROM words WHERE en_word LIKE :query")
-    fun getCursorByQuery(query: String): LiveData<List<WordEntity>>
+    fun getCursorByQuery(query: String): Cursor
 }
